@@ -1,3 +1,18 @@
+variable "auth0_domain" {
+  type        = "string"
+  description = "Auth0 domain"
+}
+
+variable "auth0_client_id" {
+  type        = "string"
+  description = "Auth0 client id"
+}
+
+variable "auth0_client_secret" {
+  type        = "string"
+  description = "Auth0 client secret"
+}
+
 variable "commercetools_client_id" {
   type        = string
   description = "The commercetools client id"
