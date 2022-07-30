@@ -18,7 +18,8 @@ terraform {
     }
 
     stripe = {
-      source = "franckverrot/stripe"
+      source  = "franckverrot/stripe"
+      version = "1.9.0"
     }
 
     auth0 = {
@@ -35,7 +36,7 @@ provider "auth0" {
 }
 
 provider "stripe" {
-  api_token = var.stripe_api_token
+  api_token = var.stripe_secret_key
 }
 
 provider "vercel" {
@@ -45,8 +46,8 @@ provider "vercel" {
 provider "commercetools" {
   client_id     = var.commercetools_client_id
   client_secret = var.commercetools_client_secret
-  project_key   = var.project_key
-  scopes        = var.commercetools_scopes
-  api_url       = var.commercetools_api_url
-  token_url     = var.commercetools_token_url
+  project_key   = var.commercetools_project_key
+  scopes        = "manage_project:${var.project_name}"
+  api_url       = "https://api.europe-west1.gcp.commercetools.com"
+  token_url     = "https://auth.europe-west1.gcp.commercetools.com"
 }

@@ -1,3 +1,9 @@
+variable "project_name" {
+  type        = string
+  description = "The name of the project"
+  default     = "tec2000"
+}
+
 variable "auth0_domain" {
   type        = string
   description = "Auth0 domain"
@@ -23,24 +29,9 @@ variable "commercetools_client_secret" {
   description = "The commercetools secret"
 }
 
-variable "project_key" {
+variable "commercetools_project_key" {
   type        = string
   description = "The commercetools project key"
-}
-
-variable "commercetools_scopes" {
-  type        = string
-  description = "The commercetools scopes"
-}
-
-variable "commercetools_api_url" {
-  type        = string
-  description = "The commercetools api url"
-}
-
-variable "commercetools_token_url" {
-  type        = string
-  description = "The commercetools token url"
 }
 
 variable "vercel_api_token" {
@@ -48,7 +39,7 @@ variable "vercel_api_token" {
   description = "Vercel api token"
 }
 
-variable "stripe_api_token" {
+variable "stripe_secret_key" {
   type        = string
   description = "Stripe api token"
 }
