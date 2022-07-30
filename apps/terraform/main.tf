@@ -1,10 +1,10 @@
 terraform {
   cloud {
-    organization = "example_corp"
+    organization = "tec2000"
     hostname     = "app.terraform.io" # Optional; defaults to app.terraform.io
 
     workspaces {
-      tags = ["app"]
+      tags = ["cli-dev"]
     }
   }
 
@@ -12,14 +12,30 @@ terraform {
     commercetools = {
       source = "labd/commercetools"
     }
+
+    vercel = {
+      source = "vercel/vercel"
+    }
+
+    stripe = {
+      source = "franckverrot/stripe"
+    }
   }
 }
 
+provider "stripe" {
+  api_token = var.stripe_api_token
+}
+
+provider "vercel" {
+  api_token = var.vercel_api_token
+}
+
 provider "commercetools" {
-  client_id     = "U8J3g6lTIKVhKzoWjzRLycfj"
-  client_secret = "x79bjIW473T6kzc-gqBzvK19KiF8hfw6"
-  project_key   = "tec2000"
-  scopes        = "manage_subscriptions:tec2000 manage_project_settings:tec2000 manage_extensions:tec2000 manage_api_clients:tec2000"
-  api_url       = "https://api.europe-west1.gcp.commercetools.com"
-  token_url     = "https://auth.europe-west1.gcp.commercetools.com"
+  client_id     = var.commercetools_client_id
+  client_secret = var.commercetools_client_secret
+  project_key   = var.project_key
+  scopes        = var.commercetools_scopes
+  api_url       = var.commercetools_api_url
+  token_url     = var.commercetools_token_url
 }
