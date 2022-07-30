@@ -25,14 +25,25 @@ terraform {
     auth0 = {
       source = "auth0/auth0"
     }
+
+    namecheap = {
+      source  = "namecheap/namecheap"
+      version = ">= 2.1.0"
+    }
   }
+}
+
+provider namecheap {
+  api_key  = var.namecheap_api_key
+  username = var.namecheap_username
+  api_user = var.namecheap_username
 }
 
 provider "auth0" {
   domain        = var.auth0_domain
   client_id     = var.auth0_client_id
   client_secret = var.auth0_client_secret
-
+  debug         = true
 }
 
 provider "stripe" {
