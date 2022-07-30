@@ -1,15 +1,15 @@
 variable "auth0_domain" {
-  type        = "string"
+  type        = string
   description = "Auth0 domain"
 }
 
 variable "auth0_client_id" {
-  type        = "string"
+  type        = string
   description = "Auth0 client id"
 }
 
 variable "auth0_client_secret" {
-  type        = "string"
+  type        = string
   description = "Auth0 client secret"
 }
 
