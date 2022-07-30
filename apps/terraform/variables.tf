@@ -4,6 +4,13 @@ variable "project_name" {
   default     = "tec2000"
 }
 
+variable "namecheap_username" {
+  type        = string
+  description = "The namecheap username"
+}
+
+variable "namecheap_api_key" {}
+
 variable "auth0_domain" {
   type        = string
   description = "Auth0 domain"
