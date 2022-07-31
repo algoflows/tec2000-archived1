@@ -34,7 +34,6 @@ terraform {
     // raised issue with repo provider owner to update golang version to 1.8 and above
     // current version of golang doesn't support m1 and m2 apple devices built on arm64
     // have put in a PR to update the build to use docker image with golang 1.17.8 minimum
-    
     #    fauna = {
     #      source  = "chronark/fauna"
     #      version = "0.5.2"
@@ -53,12 +52,6 @@ provider namecheap {
   api_user = var.namecheap_username
 }
 
-provider "auth0" {
-  domain        = var.auth0_domain
-  client_id     = var.auth0_client_id
-  client_secret = var.auth0_client_secret
-  debug         = true
-}
 
 provider "stripe" {
   api_token = var.stripe_secret_key
@@ -75,4 +68,12 @@ provider "commercetools" {
   scopes        = "manage_project:${var.project_name}"
   api_url       = "https://api.europe-west1.gcp.commercetools.com"
   token_url     = "https://auth.europe-west1.gcp.commercetools.com"
+}
+
+
+provider "auth0" {
+  domain        = var.auth0_domain
+  client_id     = var.auth0_client_id
+  client_secret = var.auth0_client_secret
+  debug         = true
 }
