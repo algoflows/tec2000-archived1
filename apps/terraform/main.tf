@@ -33,7 +33,7 @@ terraform {
 
     // raised issue with repo provider owner to update golang version to 1.8 and above
     // current version of golang doesn't support m1 and m2 apple devices built on arm64
-    // will put in a PR to update the build to use docker image with golang 17.8 minimum
+    // will put in a PR to update the build to use docker image with golang 1.17.8 minimum
     #    fauna = {
     #      source  = "chronark/fauna"
     #      version = "0.5.2"
