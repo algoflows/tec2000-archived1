@@ -4,6 +4,11 @@ variable "project_name" {
   default     = "tec2000"
 }
 
+variable "fauna_key" {
+  type        = string
+  description = "fauna serverless database key"
+}
+
 variable "namecheap_username" {
   type        = string
   description = "The namecheap username"

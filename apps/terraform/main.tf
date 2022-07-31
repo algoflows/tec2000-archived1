@@ -30,8 +30,21 @@ terraform {
       source  = "namecheap/namecheap"
       version = ">= 2.1.0"
     }
+
+    // raised issue with repo provider owner to update golang version to 1.8 and above
+    // current version of golang doesn't support m1 and m2 apple devices built on arm64
+    // will put in a PR to update the build to use docker image with golang 17.8 minimum
+    #    fauna = {
+    #      source  = "chronark/fauna"
+    #      version = "0.5.2"
+    #    }
   }
 }
+
+// work in progress pending provider golang version bump
+#provider fuana {
+#  fauna_key = var.fauna_key
+#}
 
 provider namecheap {
   api_key  = var.namecheap_api_key
