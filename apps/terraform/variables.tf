@@ -4,12 +4,21 @@ variable "project_name" {
   default     = "tec2000"
 }
 
+// work in progress waiting for provider golang version bump
+#variable "fauna_key" {
+#  type        = string
+#  description = "fauna serverless database key"
+#}
+
 variable "namecheap_username" {
   type        = string
   description = "The namecheap username"
 }
 
-variable "namecheap_api_key" {}
+variable "namecheap_api_key" {
+  type        = string
+  description = "The namecheap api key"
+}
 
 variable "auth0_domain" {
   type        = string
