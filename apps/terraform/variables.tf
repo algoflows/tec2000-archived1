@@ -15,7 +15,10 @@ variable "namecheap_username" {
   description = "The namecheap username"
 }
 
-variable "namecheap_api_key" {}
+variable "namecheap_api_key" {
+  type        = string
+  description = "The namecheap api key"
+}
 
 variable "auth0_domain" {
   type        = string
