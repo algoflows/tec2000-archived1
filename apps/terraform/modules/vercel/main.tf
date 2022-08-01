@@ -28,7 +28,7 @@ resource "vercel_deployment" "deployment" {
   project_id       = vercel_project.example.id
   ref              = "dev"
   project_settings = {
-    build_command    = "npx nx build web"
+    build_command    = "npx nx build web --prod"
     output_directory = "./dist/apps/web/.next"
   }
 }
