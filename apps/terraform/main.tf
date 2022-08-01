@@ -70,10 +70,14 @@ provider "commercetools" {
   token_url     = "https://auth.europe-west1.gcp.commercetools.com"
 }
 
-
 provider "auth0" {
   domain        = var.auth0_domain
   client_id     = var.auth0_client_id
   client_secret = var.auth0_client_secret
   debug         = true
+}
+
+module "vercel" {
+  source       = "./modules/vercel"
+  project_name = var.project_name
 }
