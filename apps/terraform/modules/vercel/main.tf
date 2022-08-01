@@ -26,12 +26,10 @@ resource "vercel_project_domain" "domain" {
 
 resource "vercel_deployment" "deployment" {
   project_id       = vercel_project.example.id
-  production       = false
   ref              = "dev"
   project_settings = {
-    framework        = "nextjs"
-    install_command  = "npm install"
-    build_command    = "npx nx build web --prod"
+    install_command  = "yarn install"
+    build_command    = "npx nx build web"
     output_directory = "./dist/apps/web/.next"
   }
 }
