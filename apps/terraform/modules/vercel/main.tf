@@ -26,6 +26,7 @@ resource "vercel_project_domain" "domain" {
 
 resource "vercel_deployment" "deployment" {
   project_id       = vercel_project.example.id
+  production       = false
   ref              = "dev"
   project_settings = {
     build_command    = "npx nx build web --prod"

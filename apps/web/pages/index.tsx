@@ -164,6 +164,7 @@ export default function Index() {
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               We are nothing but the best, we are the best. you can trust us. when you trust us.
               But we could win also if you do trust us. We will test one last time... very last test.
+              Ultra last test, promise.
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
