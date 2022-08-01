@@ -15,7 +15,7 @@ resource "vercel_project" "example" {
     repo = "algoflows/tec2000"
   }
 
-  #  ignore_command = "npx nx-ignore web"
+  ignore_command = "npx nx-ignore web"
 }
 
 resource "vercel_project_domain" "domain" {
