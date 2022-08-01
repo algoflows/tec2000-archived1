@@ -15,7 +15,7 @@ resource "vercel_project" "example" {
     repo = "algoflows/tec2000"
   }
 
-  #  ignore_command = "npx nx-ignore web"
+  ignore_command = "npx nx-ignore web"
 }
 
 resource "vercel_project_domain" "domain" {
@@ -28,7 +28,6 @@ resource "vercel_deployment" "deployment" {
   project_id       = vercel_project.example.id
   ref              = "dev"
   project_settings = {
-    install_command  = "yarn install"
     build_command    = "npx nx build web"
     output_directory = "./dist/apps/web/.next"
   }
