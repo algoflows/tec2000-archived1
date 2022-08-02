@@ -31,27 +31,24 @@ terraform {
       version = ">= 2.1.0"
     }
 
-    // raised issue with repo provider owner to update golang version to 1.8 and above
-    // current version of golang doesn't support m1 and m2 apple devices built on arm64
-    // have put in a PR to update the build to use docker image with golang 1.17.8 minimum
-    #    fauna = {
-    #      source  = "chronark/fauna"
-    #      version = "0.5.2"
-    #    }
+
+    fauna = {
+      source  = "chronark/fauna"
+      version = "0.5.3"
+    }
   }
 }
 
-// work in progress pending provider golang version bump
-#provider fuana {
-#  fauna_key = var.fauna_key
-#}
+# Providers
+provider fauna {
+  fauna_key = var.fauna_key
+}
 
 provider namecheap {
   api_key  = var.namecheap_api_key
   username = var.namecheap_username
   api_user = var.namecheap_username
 }
-
 
 provider "stripe" {
   api_token = var.stripe_secret_key
@@ -77,7 +74,14 @@ provider "auth0" {
   debug         = true
 }
 
+# Modules
 module "vercel" {
   source       = "./modules/vercel"
   project_name = var.project_name
+}
+
+module "fauna" {
+  source = "./modules/fauna"
+  #  project_name = var.project_name
+  #  ci_context   = var.ci_context
 }
