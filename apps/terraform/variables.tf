@@ -4,11 +4,16 @@ variable "project_name" {
   default     = "tec2000"
 }
 
-// work in progress waiting for provider golang version bump
-#variable "fauna_key" {
-#  type        = string
-#  description = "fauna serverless database key"
-#}
+variable "ci_context" {
+  type        = string
+  description = "The current CI environment"
+  default     = "dev"
+}
+
+variable "fauna_key" {
+  type        = string
+  description = "fauna serverless database key"
+}
 
 variable "namecheap_username" {
   type        = string
