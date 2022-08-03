@@ -82,6 +82,4 @@ module "vercel" {
 
 module "fauna" {
   source = "./modules/fauna"
-  #  project_name = var.project_name
-  #  ci_context   = var.ci_context
 }
